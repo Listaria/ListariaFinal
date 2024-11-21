@@ -17,7 +17,8 @@ const Navbar = () => {
     }
 
   return (
-    <div className='flex items-center justify-between py-5 font-medium'>
+    
+    <div className='flex items-center justify-between py-6 font-medium'>
       
       <Link to='/'><img src={assets.logo} className='w-36' alt="" /></Link>
 
@@ -28,7 +29,7 @@ const Navbar = () => {
             <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
         </NavLink>
         <NavLink to='/collection' className='flex flex-col items-center gap-1'>
-            <p>COLLECTION</p>
+            <p>LISTED PRODUCTS</p>
             <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
         </NavLink>
         <NavLink to='/about' className='flex flex-col items-center gap-1'>
@@ -38,6 +39,11 @@ const Navbar = () => {
         <NavLink to='/contact' className='flex flex-col items-center gap-1'>
             <p>CONTACT</p>
             <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
+        </NavLink>
+        <NavLink to='https://forms.gle/wCgXUr2DFZTj9WgXA' target='_blank' rel='noopener noreferrer' className='flex flex-col items-center gap-1'>
+           <button className='bg-black text-white px-2 py-2 rounded h-1.45 w-50 -my-2 font-bold'>
+            POST YOUR AD
+            </button>
         </NavLink>
 
       </ul>

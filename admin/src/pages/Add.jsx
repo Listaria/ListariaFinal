@@ -14,8 +14,8 @@ const Add = ({token}) => {
    const [name, setName] = useState("");
    const [description, setDescription] = useState("");
    const [price, setPrice] = useState("");
-   const [category, setCategory] = useState("Men");
-   const [subCategory, setSubCategory] = useState("Topwear");
+   const [category, setCategory] = useState("Electronics");
+   const [subCategory, setSubCategory] = useState("Smartphones & Accessories");
    const [bestseller, setBestseller] = useState(false);
    const [sizes, setSizes] = useState([]);
 
@@ -100,18 +100,48 @@ const Add = ({token}) => {
             <div>
               <p className='mb-2'>Product category</p>
               <select onChange={(e) => setCategory(e.target.value)} className='w-full px-3 py-2'>
-                  <option value="Men">Men</option>
-                  <option value="Women">Women</option>
-                  <option value="Kids">Kids</option>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Clothing">Clothing</option>
+                  <option value="Books">Books</option>
+                  <option value="Home & Living">Home & Living</option>
               </select>
             </div>
 
             <div>
               <p className='mb-2'>Sub category</p>
               <select onChange={(e) => setSubCategory(e.target.value)} className='w-full px-3 py-2'>
-                  <option value="Topwear">Topwear</option>
-                  <option value="Bottomwear">Bottomwear</option>
-                  <option value="Winterwear">Winterwear</option>
+                  {category === "Electronics" && (
+                    <>
+                      <option value="Smartphones & Accessories">Smartphones & Accessories</option>
+                      <option value="Laptops & Tablets">Laptops & Tablets</option>
+                      <option value="Home Audio & Speakers">Home Audio & Speakers</option>
+                      <option value="Wearable Devices">Wearable Devices</option>
+                    </>
+                  )}
+                  {category === "Clothing" && (
+                    <>
+                      <option value="Men's Fashion">Men's Fashion</option>
+                      <option value="Women's Fashion">Women's Fashion</option>
+                      <option value="Kids' Wear">Kids' Wear</option>
+                      <option value="Accessories">Accessories</option>
+                    </>
+                  )}
+                  {category === "Books" && (
+                    <>
+                      <option value="Fiction">Fiction</option>
+                      <option value="Non-Fiction">Non-Fiction</option>
+                      <option value="Academic & Study Guides">Academic & Study Guides</option>
+                      <option value="Children's Books">Children's Books</option>
+                    </>
+                  )}
+                  {category === "Home & Living" && (
+                    <>
+                      <option value="Furniture">Furniture</option>
+                      <option value="Kitchen & Dining">Kitchen & Dining</option>
+                      <option value="Decor & Lighting">Decor & Lighting</option>
+                      <option value="Bedding & Bath">Bedding & Bath</option>
+                    </>
+                  )}
               </select>
             </div>
 
@@ -123,7 +153,7 @@ const Add = ({token}) => {
         </div>
 
         <div>
-          <p className='mb-2'>Product Sizes</p>
+          <p className='mb-2'>Product Sizes 'If needed'</p>
           <div className='flex gap-3'>
             <div onClick={()=>setSizes(prev => prev.includes("S") ? prev.filter( item => item !== "S") : [...prev,"S"])}>
               <p className={`${sizes.includes("S") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>S</p>
@@ -144,12 +174,16 @@ const Add = ({token}) => {
             <div onClick={()=>setSizes(prev => prev.includes("XXL") ? prev.filter( item => item !== "XXL") : [...prev,"XXL"])}>
               <p className={`${sizes.includes("XXL") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>XXL</p>
             </div>
+            <p className='text-blue-500'>Choose this if you are not listing Cloths</p>
+            <div onClick={()=>setSizes(prev => prev.includes("NONE") ? prev.filter( item => item !== "NONE") : [...prev,"NONE"])}>
+              <p className={`${sizes.includes("NONE") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>NONE</p>
+            </div>
           </div>
         </div>
 
         <div className='flex gap-2 mt-2'>
           <input onChange={() => setBestseller(prev => !prev)} checked={bestseller} type="checkbox" id='bestseller' />
-          <label className='cursor-pointer' htmlFor="bestseller">Add to bestseller</label>
+          <label className='cursor-pointer' htmlFor="bestseller">Add To Featured</label>
         </div>
 
         <button type="submit" className='w-28 py-3 mt-4 bg-black text-white'>ADD</button>
