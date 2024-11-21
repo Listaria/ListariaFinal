@@ -30,7 +30,7 @@ app.use('/api/cart',cartRouter)
 app.use('/api/order',orderRouter)
 
 app.get('/',(req,res)=>{
-    res.send("API Working")
+    res.send("Lastaria backend Working")
 })
 
-app.listen(port, ()=> console.log('Server started on PORT : '+ port))
+// app.listen(port, ()=> console.log('Server started on PORT : '+ port))
