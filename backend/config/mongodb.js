@@ -4,7 +4,7 @@ import "dotenv/config";
 // coonect db
 const connectDB = async () => {
   try {
-    mongoose.connect(process.env.DB_URL, {
+    mongoose.connect("mongodb+srv://sagarchaurasialink:t9cJDM5CS4UOqgNZ@cluster0.btqwc.mongodb.net/listaria", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
