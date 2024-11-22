@@ -5,6 +5,7 @@ import authUser from '../middleware/auth.js'
 
 const orderRouter = express.Router()
     // minior chage
+    // minor chagnges in 
     // Admin Features
 orderRouter.post('/list', adminAuth, allOrders)
 orderRouter.post('/status', adminAuth, updateStatus)
