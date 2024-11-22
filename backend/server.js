@@ -7,6 +7,7 @@ import userRouter from './routes/userRoute.js';
 import productRouter from './routes/productRoute.js';
 import cartRouter from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
+import favicon from 'serve-favicon';
 
 // App Config
 const app = express();
@@ -21,6 +22,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
     credentials: true // Include cookies in the requests if needed
 }));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 // API Endpoints
 app.use('/api/user', userRouter);
