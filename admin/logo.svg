@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+	<title>New Project</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 150px;fill: #000000;font-weight: 5;font-family: "BlackChancery", "BlackChancery" } 
+	</style>
+	<text id="L" style="transform: matrix(4.224,0,0,4.965,47.234,31.104);paint-order:stroke fill markers;stroke: #ffffff;stroke-width: 24;stroke-linejoin: round;" >
+		<tspan x="0" y="100.7" class="t0">L
+</tspan>
+	</text>
+</svg>
