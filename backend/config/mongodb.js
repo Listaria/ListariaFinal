@@ -5,8 +5,7 @@ import "dotenv/config";
 const connectDB = async () => {
   try {
     mongoose.connect("mongodb+srv://sagarchaurasialink:t9cJDM5CS4UOqgNZ@cluster0.btqwc.mongodb.net/listaria", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+  
     });
     console.log("Db worked fine");
 
