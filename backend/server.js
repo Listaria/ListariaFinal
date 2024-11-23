@@ -22,7 +22,6 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
     credentials: true // Include cookies in the requests if needed
 }));
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 // API Endpoints
 app.use('/api/user', userRouter);
