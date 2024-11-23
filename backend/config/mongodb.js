@@ -4,8 +4,8 @@ import "dotenv/config";
 // coonect db
 const connectDB = async () => {
   try {
-    mongoose.connect("mongodb+srv://sagarchaurasialink:t9cJDM5CS4UOqgNZ@cluster0.btqwc.mongodb.net", {
-  
+    mongoose.connect(process.env.MONGODB_URI, {
+  // just check
     });
     console.log("Db worked fine");
 
