@@ -7,6 +7,7 @@ const connectDB = async () => {
     mongoose.connect(process.env.MONGODB_URI, {
   // just check
     });
+    // db work fine
     console.log("Db worked fine");
 
   } catch (er) {
