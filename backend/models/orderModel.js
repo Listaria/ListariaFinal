@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-
+// schema
 const orderSchema = new mongoose.Schema({
     userId: { type: String, required: true },
     items: { type: Array, required: true },
