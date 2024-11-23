@@ -7,12 +7,6 @@ import userRouter from "./routes/userRoute.js";
 import productRouter from "./routes/productRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
-// import favicon from "serve-favicon";
-import { fileURLToPath } from "url";
-import path, { dirname } from "path";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 // App Config
 const app = express();
@@ -28,7 +22,6 @@ app.use(
     credentials: true, // Include cookies in the requests if needed
   })
 );
-// app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // API Endpoints
 app.use("/api/user", userRouter);
@@ -39,6 +32,8 @@ app.use("/api/order", orderRouter);
 app.get("/", (req, res) => {
   res.send("Listaria backend working");
 });
+
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
   console.log("server is listening on port 4000...");
