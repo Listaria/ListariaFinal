@@ -7,18 +7,16 @@ import userRouter from './routes/userRoute.js';
 import productRouter from './routes/productRoute.js';
 import cartRouter from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
-import favicon from 'serve-favicon';
 
 // App Config
 const app = express();
-const port = process.env.PORT || 4000;
 connectDB();
 connectCloudinary();
 
 // Middlewares
 app.use(express.json());
 app.use(cors({
-    origin: "*", // Replace with your frontend domain
+    origin: process.env.FRONTEND, // Replace with your frontend domain
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
     credentials: true // Include cookies in the requests if needed
 }));
